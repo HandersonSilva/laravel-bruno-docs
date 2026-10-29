@@ -107,6 +107,8 @@ Os assets estáticos ficam fora dessas rotas:
 
 ## O que entra no OpenAPI
 
+O passo a passo da conversão está em [docs/fluxo-bruno-para-swagger.md](docs/fluxo-bruno-para-swagger.md).
+
 A partir dos `.bru` da coleção:
 
 - método, path e `meta.name`; `{{baseUrl}}` sai da URL
