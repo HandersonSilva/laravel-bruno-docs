@@ -1,0 +1,37 @@
+meta {
+  name: List
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/medicaments?take=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  take: 100
+  sort: NAME
+  ~sort: COMPANY
+  ~sort: RELEVANCE
+  in_document: 0
+  ~in_document: 1
+  ids[]: 52bdfc69-2e2a-4558-a075-baab9660d566
+  ids[]: 859f416b-34fa-4158-9cb3-67f1f01c9b18
+}
+
+docs {
+  Lista medicamentos.
+
+  - `take` (≥ 0; ausente ou 0 = sem limite)
+
+  Resposta 200:
+  {
+    "items": [{ "id": "uuid", "name": "SAUDE" }],
+    "total": 1
+  }
+
+  - 401 {"message":"Unauthenticated."}
+  - 422 quando take ou skip são inválidos
+}

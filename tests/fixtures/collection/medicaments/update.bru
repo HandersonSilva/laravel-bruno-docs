@@ -1,0 +1,26 @@
+meta {
+  name: Update
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/api/medicaments/591c0377-08d0-4259-8cf3-015d901c2b4c
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "active_principles": [
+      "2c853eef-7258-4540-93b8-45692530935b"
+    ]
+  }
+}
+
+docs {
+  Substitui os princípios ativos.
+
+  - 404 {"message":"Medicament not found."} quando o uuid não existe
+  - 404 quando o id não é um uuid
+}

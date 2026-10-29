@@ -1,0 +1,20 @@
+meta {
+  name: Update
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/api/medicaments/batch
+  body: json
+  auth: bearer
+}
+
+body:json {
+  [
+    {
+      "id": "591c0377-08d0-4259-8cf3-015d901c2b4c",
+      "active_principles": ["2c853eef-7258-4540-93b8-45692530935b"]
+    }
+  ]
+}
